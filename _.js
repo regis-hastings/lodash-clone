@@ -4,20 +4,15 @@ let _ = {
     let final = Math.min(initial, upper);
     return final;
   },
-  
   inRange(num, start, end){
     if (end === undefined) {
       end = start;
       start = 0;
     }
-    if (start > end) {
-      start = start + end;
-      end = start - end;
-      start = start - end;
+    if (start > end) { 
+      [start, end] = [end, start]
     }
-    if (num < start) {
-      return false;
-    } else if (num >= end) {
+    if (num < start || num >= end) {
       return false;
     } else {
       return true
