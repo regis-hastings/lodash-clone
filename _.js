@@ -12,11 +12,13 @@ let _ = {
     if (start > end) { 
       [start, end] = [end, start]
     }
-    if (num < start || num >= end) {
-      return false;
-    } else {
-      return true
-    }
+    isInRange = Boolean(start <= num && num < end);
+    return isInRange;
+    // if (num < start || num >= end) {
+    //   return false;
+    // } else {
+    //   return true
+    // }
   }
 }
 
