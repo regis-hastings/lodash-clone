@@ -18,25 +18,14 @@ let _ = {
   words(string) {
     return string.split(' ');
   },
-  pad(string, length) {
-    if (string.length >= length) {
+  pad (string, length) {
+    if (length <= string.length) {
       return string;
     }
-    const lengthDifference = length - string.length;
-    let spacesToAdd = lengthDifference / 2;
-    let pad = "";
-    if (lengthDifference % 2 === 0) {
-      for (let i = 0; i < spacesToAdd; i++) {
-        pad += " ";
-      };
-      return `${pad}${string}${pad}`;
-    } else {
-      spacesToAdd = Math.floor(spacesToAdd);
-      for (let i = 0; i < spacesToAdd; i++) {
-        pad += " ";
-      }
-      return `${pad}${string}${pad} `;
-    }
+    let startPaddingLength = Math.floor((length - string.length) / 2);
+    let endPaddingLength = length - string.length - startPaddingLength;
+    let paddedString = `${" ".repeat(startPaddingLength)}${string}${" ".repeat(endPaddingLength)}`;
+    return paddedString;
   }
 }
 
