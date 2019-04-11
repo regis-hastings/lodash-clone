@@ -15,8 +15,28 @@ let _ = {
     isInRange = Boolean(start <= num && num < end);
     return isInRange;
   },
-  words(string){
+  words(string) {
     return string.split(' ');
+  },
+  pad(string, length) {
+    if (string.length >= length) {
+      return string;
+    }
+    const lengthDifference = length - string.length;
+    let spacesToAdd = lengthDifference / 2;
+    let pad = "";
+    if (lengthDifference % 2 === 0) {
+      for (let i = 0; i < spacesToAdd; i++) {
+        pad += " ";
+      };
+      return `${pad}${string}${pad}`;
+    } else {
+      spacesToAdd = Math.floor(spacesToAdd);
+      for (let i = 0; i < spacesToAdd; i++) {
+        pad += " ";
+      }
+      return `${pad}${string}${pad} `;
+    }
   }
 }
 
