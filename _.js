@@ -14,11 +14,9 @@ let _ = {
     }
     isInRange = Boolean(start <= num && num < end);
     return isInRange;
-    // if (num < start || num >= end) {
-    //   return false;
-    // } else {
-    //   return true
-    // }
+  },
+  words(string){
+    return string.split(' ');
   }
 }
 
