@@ -26,6 +26,9 @@ let _ = {
     let endPaddingLength = length - string.length - startPaddingLength;
     let paddedString = `${" ".repeat(startPaddingLength)}${string}${" ".repeat(endPaddingLength)}`;
     return paddedString;
+  },
+  has (object, key) {
+    return Boolean(object[key]);
   }
 }
 
