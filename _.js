@@ -36,6 +36,15 @@ let _ = {
       newObject[object[key]] = key; 
     }
     return newObject;
+  },
+  findKey (object, pFunc) {
+    for (key in object) {
+      let value = object[key];
+      if (pFunc(value)) {
+        return key;
+      }
+    }
+    return undefined;
   }
 }
 
