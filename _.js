@@ -29,6 +29,13 @@ let _ = {
   },
   has (object, key) {
     return Boolean(object[key]);
+  },
+  invert (object) {
+    let newObject = {};    
+    for (key in object) {
+      newObject[object[key]] = key; 
+    }
+    return newObject;
   }
 }
 
