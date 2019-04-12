@@ -51,7 +51,7 @@ let _ = {
       array.shift();
       return array;
     } else {
-      array.slice(number);
+      return array.slice(number);
     }
   }
 }
