@@ -45,6 +45,14 @@ let _ = {
       }
     }
     return undefined;
+  },
+  drop (array, number) {
+    if (!number) {
+      array.shift();
+      return array;
+    } else {
+      array.slice(number);
+    }
   }
 }
 
