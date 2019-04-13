@@ -50,9 +50,15 @@ let _ = {
     if (!number) {
       array.shift();
       return array;
-    } else {
-      return array.slice(number);
     }
+    return array.slice(number);
+  },
+  dropWhile (array, predicate) {
+    const dropNumber = array.findIndex( (element, index) => {
+      return !predicate(element, index, array);
+    });
+    const droppedArray = this.drop(array, dropNumber);
+    return droppedArray;
   }
 }
 
